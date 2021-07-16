@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Form 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" th:href="@{/CSS/home.css}">
+<link rel="stylesheet" th:href="@{/CSS/forms.css}">
+<script th:src="@{/JS/home.js}"></script>
+</head>
+<body style="background-color: rgb(247, 251, 252);">
+
+<div th:include="receiver_home::static-content"></div>
+<div style="margin-left: 530px; "> <h3>Request Details</h3> </div>
+
+<div style="margin-left: 250px;width: 800px; background-color: white; border: 1px solid  rgb(211, 211, 211); margin-top: 50px; ">
+
+<form class="row g-3" style="padding: 20px" action="/DisasterHelpForm/receiverForm1Task" method="post">
+   
+  <div class="col-12">
+  	<!-- <label class="form-label">Food</label>  -->
+  	<input type="checkbox" class="form-label food-check" name="food" value="food"> Food
+  	<input type="text" class="form-control" id="food-input" placeholder="rice,bread etc.">  
+  </div>
+  
+  <div class="col-12">
+  	<!-- <label for="inputAddress2" class="form-label">Cloth</label> -->
+  	<input type="checkbox" class="form-label cloth-check" name="cloth" value="cloth" > Cloth   
+    <input type="text" class="form-control" id="cloth-input" placeholder="Men's wear or Girl's wear">
+  </div>
+
+  <div class="col-12">
+  <label class="form-label" style="margin-top: 30px">Description</label>
+  <textarea rows="3" cols="" class="form-control" name="description"
+							style="margin-bottom: 25px; resize: none;"
+						
+							></textarea>
+</div>
+
+
+  <div class="col-12">
+  	<span style="color: red;" th:text="${formError}"></span> <br>
+    <button type="submit" class="btn btn-primary form-submit-btn">Submit</button>
+  </div>
+</form>
+</div>
+</body>
+</html>

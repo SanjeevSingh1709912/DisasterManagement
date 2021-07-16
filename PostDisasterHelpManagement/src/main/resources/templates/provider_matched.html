@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Matched</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" th:href="@{/CSS/home.css}">
+<script th:src="@{/JS/home.js}"></script>
+</head>
+<body style="background-color: rgb(247, 251, 252);">
+
+<div th:include="provider_home::static-content"></div>
+
+<!-- <span th:text="${matchedRequestDetails}"></span>
+<span th:text="${matchedReceiverDetails}"></span> -->
+<div style="font-size: 40px; font-family: sans-serif; margin-left: 460px; margin-bottom: 20px">Matched Request</div>
+<div style="background-color: white; width: 700px; margin-left: 290px; border: 1px solid  rgb(211, 211, 211);">
+<div style="padding: 10px;" th:with="food=${matchedRequestDetails.food} != null ? 'Food  ' : '' , cloth=${matchedRequestDetails.cloth} != null ? 'Cloth  ' : '' , medicine=${matchedRequestDetails.medicine} != null ? 'Medicine('+${matchedRequestDetails.medicine}+')  ' : '' , blood=${matchedRequestDetails.blood} != null ? 'Blood('+ ${matchedRequestDetails.blood} + ')  ' : '' , medi=${matchedRequestDetails.medical_apparatus} != null ? 'Apparatus('+${matchedRequestDetails.medical_apparatus}+')' : ''">
+<span style="font-size: xx-large; font-family: sans-serif;" th:text="${matchedReceiverDetails.fullname}"></span> <br> 
+<span style="font-size: small;" th:text="${matchedReceiverDetails.mob}"></span> <br>
+<span style="font-size: small;" th:text="${matchedReceiverDetails.email}"></span> <br>
+<span style="font-size: small;" th:text="${matchedReceiverDetails.receiverAddress.country}"></span> <br>
+<span style="font-size: small;" th:text="${matchedReceiverDetails.receiverAddress.state}"></span>
+<span style="font-size: small;" th:text="${matchedReceiverDetails.receiverAddress.city}"></span>
+<span style="font-size: small;" th:text="${matchedReceiverDetails.receiverAddress.postal_code}"></span> <br>
+<span style="font-size: small;" th:text="'Message - '+ ${matchedRequestDetails.description}"></span> <br> <br>
+<span style="font-size: x-large; font-family: sans-serif;">Requests For</span> <br>
+<span th:text="${food + cloth + blood + medicine + medi}"></span>
+</div>
+</div>
+
+
+
+</body>
+</html>

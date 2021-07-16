@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Form 2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" th:href="@{/CSS/home.css}">
+<link rel="stylesheet" th:href="@{/CSS/forms.css}">
+<script th:src="@{/JS/home.js}"></script>
+</head>
+<body style="background-color: rgb(247, 251, 252);">
+
+<div th:include="receiver_home::static-content"></div>
+<div style="margin-left: 530px; "> <h3>Request Details</h3> </div>
+<div style="margin-left: 250px;width: 800px; background-color: white; border: 1px solid  rgb(211, 211, 211); margin-top: 50px; ">
+
+<form class="row g-3" style="padding: 20px" action="/DisasterHelpForm/receiverForm2Task" method="post"> 
+ 
+  <div class="col-12">
+  	<input type="checkbox" class="form-label" name="medicine" value="blood"> Medicine
+  	<div id="medicine-input">
+    <select  class="form-select form-control" multiple="multiple" name="medicinecontent">
+      <option> Paracetamol </option>
+      <option> Saridon </option>
+      <option> Flexon </option>
+      <option> Pain Killers </option>
+      <option> Azythromycin </option>  
+      <option> Althrocin </option> 
+    </select>
+    <span class="form-label"  style="font-weight: lighter; font-size: small; font-style: italic;">hold Ctrl to select multiple</span>
+  </div>
+  </div>
+  
+  <div class="col-12">
+  	<input type="checkbox" class="form-label" name="blood" value="blood"> Blood
+  	<div id="blood-input">
+    <select class="form-select form-control" multiple="multiple" name="bloodcontent">
+      <option> A+ </option>
+      <option> B+ </option>
+      <option> O+ </option>
+      <option> B- </option>
+      <option> A- </option>
+      <option> AB+ </option>
+    </select>
+    <span class="form-label"  style="font-weight: lighter; font-size: small; font-style: italic;">hold Ctrl to select multiple</span>
+    </div>
+  </div>
+  <div class="col-12">
+  	<input type="checkbox" class="form-label" name="apparatus" value="apparatus" > Medical Apparatus
+   <div id="apparatus-input">
+    <select  class="form-select form-control" multiple="multiple" name="apparatuscontent">
+      <option> Oxygen Concentrators </option>
+      <option> Wheelchair </option>
+      <option> Hospital Beds </option>
+      <option>  Dialysis Machine </option>
+      <option> Vantilators </option>
+      <option> Incubators </option>
+    </select>
+    <span class="form-label"  style="font-weight: lighter; font-size: small; font-style: italic;">hold Ctrl to select multiple</span>
+   </div> 
+  </div>
+  <div class="col-12">
+  <label class="form-label" style="margin-top: 30px">Description</label>
+  <textarea rows="3" cols="" class="form-control" name="description"
+							style="margin-bottom: 25px; resize: none;"
+							
+							></textarea>
+</div>
+  <div class="col-12">
+  <span style="color: red;" th:text="${formError}"></span> <br>
+    <button type="submit" class="btn btn-primary form-submit-btn">Submit</button>
+  </div>
+</form>
+</div>
+</body>
+</html>

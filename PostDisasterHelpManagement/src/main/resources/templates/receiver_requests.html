@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>My Requests</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" th:href="@{/CSS/home.css}">
+<script th:src="@{/JS/home.js}"></script>
+</head>
+<body style="background-color: rgb(247, 251, 252);">
+
+<div th:include="receiver_home::static-content"></div>
+
+<h3 class="ticket-label" style="margin-left: 530px">Your Requests</h3>
+    <div class="container ticket-class" th:each="request : ${requestsList}">
+     <div th:with="food=${request.food} != null ? 'Food  ' : '' , cloth=${request.cloth} != null ? 'Cloth  ' : '' , medicine=${request.medicine} != null ? 'Medicine('+${request.medicine}+')  ' : '' , blood=${request.blood} != null ? 'Blood('+ ${request.blood} + ')  ' : '' , medi=${request.medical_apparatus} != null ? 'Apparatus('+${request.medical_apparatus}+')' : ''"> 
+     
+     
+      <div class="row first-row">
+        <div class="col-sm frt">
+          <i>Raised On : <span th:text="${request.date}"></span> </i>  
+        </div>
+      </div>
+      <div class="row middle-row">
+        <div class="col desc-col">
+         <span class="desc-class" th:text="${request.description}"></span>
+        </div>
+        
+          <!--  th:href="@{'/edit?ticketId='+ ${ticket.id}}" -->		<!-- <a class="btn btn-success btn-resolve"> <b>Matched</b> </a> -->
+           <!-- th:href="@{'/ticketDeleteTask?id='+ ${ticket.id}}" -->
+        <div class="col edit-button" th:if="${request.offerId} == 0">   
+           <a class="btn btn-warning btn-resolve"> <b style="font-size: 12px">Matching..</b> </a>
+        </div>
+        
+        <div class="col edit-button" th:if="${request.offerId} != 0">   
+           <a th:href="@{'/DisasterHelp/receiver/matched-provider?matched-offerId='+ ${request.offerId}}" class="btn btn-success btn-resolve"> <b style="color: white; font-size: 12px">Matched</b> </a>
+        </div>
+  
+      </div>
+
+      <div class="row last-row">
+        <div class="col" style="max-width: 85%">
+        <span class="frt2"> Category : <span th:text="${food + cloth + blood + medicine + medi}"></span> </span>
+        </div>
+        <div class="col view-class" style="max-width: 15%">
+          <a th:href="@{'/DisasterHelpForm/request/deleteRequestTask?requestId='+ ${request.id}}" style="color: rgb(12, 97, 126);">Remove</a>
+        </div>
+   </div>     
+      </div>
+</div> 
+</body>
+</html>

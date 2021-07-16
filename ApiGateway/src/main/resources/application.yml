@@ -1,0 +1,33 @@
+server:
+  port: 9054
+
+eureka:  instance:    hostname: localhost
+  
+spring:  application:    name: API-Gateway
+  cloud:
+    discovery:      enabled: true    gateway:
+      discovery:
+        locator:          enabled: true
+          lower-case-service-id: true
+            routes:      - id: PROVIDER-DONATE-SERVICE 
+        uri: lb://provider-donate-service
+        predicates:          - Path=/offers/**
+          
+      - id: receiver-request-service 
+        uri: lb://receiver-request-service
+        predicates:
+          - Path=/requests/**
+          
+      - id: provider-registration-service 
+        uri: lb://provider-registration-service 
+        predicates:
+          - Path=/providers/**
+          
+      - id: receiver-registration-service 
+        uri: lb://receiver-registration-service 
+        predicates:
+          - Path=/receivers/**
+      
+         
+  
+        

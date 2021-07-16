@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Provider Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" th:href="@{/CSS/home.css}">
+  <script th:src="@{/JS/home.js}"></script>
+  
+</head>
+<body style="background-color: rgb(247, 251, 252);">
+<div th:fragment="static-content" >
+<nav class="navbar navbar-expand-lg  bg-dark navbar-dark fixed-top scrolling-navbar">
+  <!-- Brand/logo -->
+  <a class="navbar-brand nav-link header-font"  > 
+    <!-- <img src="../../assets/images/logomain.png" alt="logo" style="height: 35px; width: 100px;"> -->
+    <strong style="margin-left: 10px;">Post Disaster Help</strong>
+  </a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav " >
+
+    
+     <li class="nav-itemA" >
+        <p>   <h6 class="header-font"></h6>  </p>
+      </li>
+      <li class="nav-itemB" >
+           <a href="/DisasterHelp/provider/logout" class="btn btn-warning">Logout</a>
+      </li>
+
+
+  </ul>
+</nav>
+
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="/DisasterHelp/provider/home" onclick="closeNav()" id="my-ticket-label">Donate</a>
+     <div>
+     <a href="/DisasterHelp/provider/mydonations" class="nav-link" id="my-ticket-label" >MyDonations</a>   
+     </div>
+  </div>
+
+  <div id="main" class="row" style="position: static;">
+    <button   id="side-btn" class="openbtn" onclick="openNav()">☰</button>
+  </div>  
+  
+  </div>
+  
+  
+  <div style="margin-left: 435px; margin-top: 30px">
+  <h4>What would you like to donate today?</h4>
+  </div>
+  
+
+ 
+  <div class="container" style="width: 600px; margin-top: 30px">
+  <div class="row">
+    <div style="height: 250px; width: 100% ; margin: 10px" class="col">
+   <a href="/DisasterHelp/provider/form1"> <img class="image" alt="" src="/images/foodcloth.jpg" style="height:  200px; width: 250px;" > </a>
+    </div>
+    <div style=" margin: 10px" class="col">
+   <a  href="/DisasterHelp/provider/form2"> <img class="image" alt="" src="/images/medical.jpg"  style="height:  200px; width: 250px;" > </a>
+    </div>
+  </div>
+  <div class="row"> 
+  	<div class="col" style="margin-left: 90px; font-weight: bold; font-family: sans-serif;" >Food or Cloth </div>
+  	<div class="col" style="margin-left: 20px; font-weight: bold; font-family: sans-serif;"> Medicines or Blood </div>
+   </div>
+  </div>
+  
+    
+</body>
+</html>

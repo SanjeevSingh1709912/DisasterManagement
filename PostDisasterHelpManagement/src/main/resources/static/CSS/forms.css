@@ -1,0 +1,29 @@
+.form-control, .form-label, .form-submit-btn{
+	margin: 10px;
+	margin-left: 5px;
+}
+
+
+#food-input, #cloth-input, #blood-input, #medicine-input, #apparatus-input{
+    display: none;
+}
+
+input[name="food"]:checked + #food-input {
+   display: inline;
+    
+}
+
+input[name="cloth"]:checked + #cloth-input {
+    display: inline;
+}
+
+input[name="blood"]:checked + #blood-input {
+    display: inline;
+}
+
+input[name="medicine"]:checked + #medicine-input {
+    display: inline;
+}
+input[name="apparatus"]:checked + #apparatus-input {
+    display: inline;
+}

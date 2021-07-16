@@ -1,0 +1,177 @@
+.header-font {
+            color: white;
+}
+
+.nav-itemA{
+        margin-left: 800px;
+         width:100px; 
+}
+
+.nav-itemB{
+         margin-top: 5px;
+         margin-left: 30px;
+}
+
+#main {
+  
+  	height: 60px;
+    margin-top: 60px;
+    margin-left: 10px;
+    transition: margin-left .5s;
+    padding: 16px;
+    position: static; 
+    
+}
+
+.sidebar {
+    height: 40%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:   #343A40;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    margin-top: 65px;
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #FFC107;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color:   #343A40;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #FFC107;
+  }
+
+
+  .ticket-class{
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 12px;
+    box-shadow: 3px 3px 8px rgb(146, 146, 146);
+    margin-bottom: 20px;
+    
+  }
+
+  .last-row{
+    border-top: 1px solid #b2b2b2;
+  }
+
+  .middle-row{
+    height: 70px;
+    padding: 10px;
+     background-color: rgb(255, 255, 255);
+  }
+
+  .first-row{
+     background-color: rgb(255, 255, 255);
+  }
+  .btn-resolve{
+   
+    text-align:center;
+    font-size: 15px;
+    width: 120px;
+  }
+
+  .edit-button{
+    text-align: right;
+    margin-top: 8px;
+    max-width: 20%;
+  }
+ 
+  .view-class{
+    text-align: right;
+  }
+
+  .last-row{
+    background-color: rgb(223, 236, 236);
+    border-radius: 12px;
+    max-width: inherit;
+  }
+
+  .btn-resolve{
+    height: 30px;
+    font-size: 10px;
+    
+  }
+
+  .desc-class{
+    font-size: 22px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	overflow: hidden;
+  }
+
+.frt{
+  font-weight: lighter;
+  font-size: small;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+}
+
+.frt2{
+	font-weight: lighter;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+.id-class{
+  text-align: right;
+}
+
+.ticket-label{
+	font-weight: bold;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+	margin-bottom: 30px;
+}
+
+.welcome-label{
+	text-align: center;
+	margin-top: 100px;
+}
+
+.desc-col{
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width: 85%;
+}
+
+.my-ticket-label, .raise-label{
+	position: relative;
+}
+
+.image:hover {
+	transform: scale(1.1);	
+}
+
+.image{
+	transition: transform .5s;
+}

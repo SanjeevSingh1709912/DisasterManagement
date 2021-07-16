@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Login</title>
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<link rel="stylesheet" th:href="@{/CSS/main.css}">
+</head>
+<body>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-md-4 col-md-offset-4">
+				<div class="account-wall">
+					<h1 class="text-center wall-label">
+						<strong>Welcome!</strong>
+					</h1>
+					<form class="form-signin" action="loginTask" method="post">
+						<h4>Email :</h4>
+						<input type="email" class="form-control" name="email" autofocus>
+						<h4>Password :</h4>
+						<input type="password" class="form-control" name="password"
+							autofocus>
+
+						<h4>Select User Type :</h4>
+						<select size="1" class="form-control" name="user" id="user-role"
+							autofocus>
+							<option id="option" value="provider">Provider</option>
+							<option id="option" value="receiver">Receiver</option>
+						</select> <span style="color: red;" th:text="${loginError}"></span>
+						<br>
+						<span style="color: red;"
+							th:text="${loginerror}"></span>
+						<button class="btn btn-lg btn-primary btn-block" type="submit">
+							Sign in</button>
+					</form>
+					
+					
+			
+				</div>
+					
+					<div class="float-container" style="margin-left: 25px; margin-right: 25px;">
+						<div class="float-child" style="float: left;"><a href="provider/signup" class="text-center new-account">
+						Register as <u>Provider</u> </a></div>
+						<div class="float-child" style="float: right;"><a href="receiver/signup" class="text-center new-account">
+						Register as <u>Receiver</u> </a></div>
+					</div>	
+						
+					
+				
+					
+			</div>
+		</div>
+	</div>
+</body>
+</html>

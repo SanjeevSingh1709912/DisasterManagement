@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Register</title>
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<link rel="stylesheet" th:href="@{/CSS/main.css}">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="account-wall" style="width: 600px" >
+					<h1 class="text-center">
+						<strong>Register as Receiver</strong>
+					</h1>
+					<form style="max-width: 600px" class="form-signin" th:action="@{/DisasterHelp/receiverSignupTask}" method="post" th:object="${newReceiver}">
+						<!-- th:object="${signupUser}" -->
+						<h4>Full Name</h4>
+						<input type="text" class="form-control is-invalid"
+							 name="fullname"
+							 th:value="${newReceiver.fullname}"
+							 autofocus>
+						<div th:each="e : ${#fields.errors('fullname')}" th:text="${e}"
+							style="color: red;"></div>
+						<!-- <div th:each="e : ${#fields.errors('firstname')}" th:text="${e}"
+							style="color: red;"></div> -->
+
+						<h4>Email</h4>
+						<input type="text" class="form-control"
+							name="email" th:value="${newReceiver.email}" autofocus>
+						<div th:each="e : ${#fields.errors('email')}" th:text="${e}"
+							style="color: red;"></div>
+						<!-- <p th:each="e : ${#fields.errors('username')}" th:text="${e}"
+							style="color: red;"></p> -->
+
+						<h4>Password</h4>
+						<input type="password" class="form-control"
+							name="password" th:value="${newReceiver.password}" autofocus>
+						<div th:each="e : ${#fields.errors('password')}" th:text="${e}"
+							style="color: red;"></div>
+						<!-- <p th:each="e : ${#fields.errors('password')}" th:text="${e}"
+							style="color: red;"></p> -->
+							
+						<h4>Country</h4>
+						<input type="text" class="form-control"
+							name="receiverAddress.country" th:value="${newReceiver.receiverAddress.country}" autofocus>
+						<div th:each="e : ${#fields.errors('receiverAddress.country')}" th:text="${e}"
+							style="color: red;"></div>
+							
+						<!-- <span style="color: red;" th:text="${signupError}"></span> -->
+						<h4>State</h4>
+						<input type="text" class="form-control"
+							name="receiverAddress.state" th:value="${newReceiver.receiverAddress.state}" autofocus>
+						<div th:each="e : ${#fields.errors('receiverAddress.state')}" th:text="${e}"
+							style="color: red;"></div>
+							
+							<h4>City</h4>
+						<input type="text" class="form-control"
+							name="receiverAddress.city" th:value="${newReceiver.receiverAddress.city}" autofocus>
+						<div th:each="e : ${#fields.errors('receiverAddress.city')}" th:text="${e}"
+							style="color: red;"></div>
+							
+							<h4>Postal Code</h4>
+						<input type="text" class="form-control"
+							name="receiverAddress.postal_code" th:value="${newReceiver.receiverAddress.postal_code}" autofocus>
+						<div th:each="e : ${#fields.errors('receiverAddress.postal_code')}" th:text="${e}"
+							style="color: red;"></div>
+							
+							<h4>Mobile Number</h4>
+						<input type="text" class="form-control"
+							name="mob" th:value="${newReceiver.mob}" autofocus>
+						<div th:each="e : ${#fields.errors('mob')}" th:text="${e}"
+							style="color: red;"></div>
+							
+						<span style="color: red;" th:text="${emailError}"></span>
+
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
+							up</button>
+					</form>
+				</div>
+				<a href="../login" class="text-center new-account">Back to <u>Login</u>  </a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

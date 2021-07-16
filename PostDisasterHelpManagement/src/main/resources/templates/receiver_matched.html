@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Matched</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" th:href="@{/CSS/home.css}">
+<script th:src="@{/JS/home.js}"></script>
+</head>
+<body style="background-color: rgb(247, 251, 252);">
+
+<div th:include="receiver_home::static-content"></div>
+
+<!-- <span th:text="${matchedOfferDetails}"></span>
+<span th:text="${matchedProviderDetails}"></span> -->
+
+<div style="font-size: 40px; font-family: sans-serif; margin-left: 460px; margin-bottom: 20px">Matched Donation</div>
+<div style="background-color: white; width: 700px; margin-left: 290px; border: 1px solid  rgb(211, 211, 211);">
+<div style="padding: 10px;" th:with="food=${matchedOfferDetails.food} != null ? 'Food  ' : '' , cloth=${matchedOfferDetails.cloth} != null ? 'Cloth  ' : '' , medicine=${matchedOfferDetails.medicine} != null ? 'Medicine('+${matchedOfferDetails.medicine}+')  ' : '' , blood=${matchedOfferDetails.blood} != null ? 'Blood('+ ${matchedOfferDetails.blood} + ')  ' : '' , medi=${matchedOfferDetails.medical_apparatus} != null ? 'Apparatus('+${matchedOfferDetails.medical_apparatus}+')' : ''">
+<span style="font-size: xx-large; font-family: sans-serif;" th:text="${matchedProviderDetails.fullname}"></span> <br> 
+<span style="font-size: small;" th:text="${matchedProviderDetails.mob}"></span> <br>
+<span style="font-size: small;" th:text="${matchedProviderDetails.email}"></span> <br>
+<span style="font-size: small;" th:text="${matchedOfferDetails.providerAddress.country}"></span> <br>
+<span style="font-size: small;" th:text="${matchedOfferDetails.providerAddress.state}"></span>
+<span style="font-size: small;" th:text="${matchedOfferDetails.providerAddress.city}"></span>
+<span style="font-size: small;" th:text="${matchedOfferDetails.providerAddress.postal_code}"></span> <br>
+<span style="font-size: small;" th:text="'Message - '+ ${matchedOfferDetails.description}"></span> <br> <br>
+<span style="font-size: x-large; font-family: sans-serif;">Donates</span> <br>
+<span th:text="${food + cloth + blood + medicine + medi}"></span>
+</div>
+</div>
+
+
+</body>
+</html>
